@@ -1,0 +1,33 @@
+<!-- purchases.html -->
+{% extends './base.html' %} {% block title %}Restaurant Purchases{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4">Restaurant Purchases</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Time</th>
+        <th scope="col">Item</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for purchase in purchases %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ purchase.timestamp }}</td>
+        <td>{{ purchase.menu_item.title }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="container text-center mt-4 mb-2">
+    <a
+      href='{% url "addpurchase" %}'
+      class="fw-bold fs-4 text-decoration-none"
+      >Add a new Purchase</a
+    >
+  </div>
+</div>
+{% endblock %}

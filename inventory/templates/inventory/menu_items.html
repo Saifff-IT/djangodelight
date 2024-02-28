@@ -1,0 +1,11 @@
+{% extends "./base.html" %} {% block title %}Menu{% endblock title %} {% block content %}
+<section class="menu mt-5">
+  <h2 class="text-center mb-4">Our Menu</h2>
+  <ul class="list-group container">
+    {% for item in items %}
+    <li class="list-group-item">{{item}}</li>
+    {% endfor %}
+  </ul>
+</section>
+<div class="container text-center my-4"><a href='{% url "addmenu" %}' class="fw-bold fs-4 text-decoration-none">Add a new item</a></div>
+{% endblock %}

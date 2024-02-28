@@ -1,0 +1,27 @@
+<!-- profit_and_revenue_report.html -->
+{% extends './base.html' %} {% block title %}Profit and Revenue Report{% endblock %} {% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4">Profit and Revenue Report</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Date</th>
+        <th scope="col">Total Revenue</th>
+        <th scope="col">Total Cost</th>
+        <th scope="col">Profit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ date }}</td>
+        <td>${{ revenue }}</td>
+        <td>${{ cost }}</td>
+        <td>${{ profit }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

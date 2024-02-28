@@ -1,0 +1,15 @@
+{% extends "./base.html" %} {% block title %} Add Ingredient {% endblock title %} 
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+    <div style="color:red" class="fs-4 container my-2">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+<div class="container">
+  <form method="POST" action="/check">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary">Add</button>
+  </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,21 @@
+<!-- home.html -->
+{% extends './base.html' %} {% block title %} Home {% endblock %} {% block content %}
+<section class="hero text-center">
+  <h1>Welcome to Our Restaurant</h1>
+  <p class="lead">Indulge in a delightful culinary experience with us.</p>
+</section>
+
+<section class="menu mt-5">
+  <h2 class="text-center mb-4">Our Menu</h2>
+  <ul class="list-group container">
+    {% for item in items %}
+    <li class="list-group-item">{{item}}</li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="specials mt-5">
+  <h2 class="text-center mb-4">Today's Specials</h2>
+  <p class="text-center">Discover our chef's special creations for today.</p>
+</section>
+{% endblock %}
